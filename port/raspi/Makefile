@@ -25,14 +25,16 @@ CORE += \
 include ${BTSTACK_ROOT}/example/Makefile.inc
 
 # use (cross)compiler for Raspi
-CC = arm-linux-gnueabihf-gcc
+# CC = arm-linux-gnueabihf-gcc
+CC = aarch64-linux-gnu-gcc
 
 CFLAGS  += -g -Wall -Werror \
 	-I$(BTSTACK_ROOT)/platform/embedded \
 	-I$(BTSTACK_ROOT)/platform/posix \
 	-I$(BTSTACK_ROOT)/chipset/bcm \
 	-I${BTSTACK_ROOT}/3rd-party/tinydir \
-    -I${BTSTACK_ROOT}/3rd-party/rijndael
+	-I${BTSTACK_ROOT}/3rd-party/rijndael \
+	-Wno-error=unused-function
 
 
 
